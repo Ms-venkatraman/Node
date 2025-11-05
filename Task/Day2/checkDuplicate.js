@@ -1,16 +1,10 @@
-
-const names=['venkat','paras','dinesh','sathish','paras']
-function findDuplicates(arr) {
-  if (!Array.isArray(arr)) return [];
-  const counts = new Map();
-  for (const item of arr) {
-    counts.set(item, (counts.get(item) || 0) + 1);
-  }
-  const duplicates = [];
-  for (const [item, cnt] of counts.entries()) {
-    if (cnt > 1) duplicates.push(item);
-  }
-  return duplicates;
-  
+const arr=[1,2,3,4,4,6,4,8,9,3,4,2];
+find=[];
+for(let i=0;i<arr.length;i++){
+    for(let j=i+1;j<arr.length;j++){
+        if(arr[i]==arr[j] && !find.includes(arr[i])){
+            find.push(arr[i]);
+        }
+    }
 }
-console.log(findDuplicates(names))
+console.log(find);

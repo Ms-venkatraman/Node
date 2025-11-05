@@ -36,17 +36,21 @@ fs.writeFile("factorial.js",factorial,(err)=>{
 })
 
 const primenumber=`
-function isPrime(n) {
-  if (typeof n !== 'number' || !Number.isInteger(n) || n < 2) return false;
-  if (n === 2 || n === 3) return true;
-  if (n % 2 === 0) return false;
-  const limit = Math.floor(Math.sqrt(n));
-  for (let i = 3; i <= limit; i += 2) {
-    if (n % i === 0) return false;
-  }
-  return true;
-}
- console.log("given number is:",isPrime(5))
+
+    for(a=2;a<=30;a++){
+        var pm=true
+        for(i=2;i<=a;i++){
+            if(a%i==0 && i!=a){
+            pm=false
+            }
+        } 
+        if(pm==true){
+            console.log("It is prime number"+i)
+        }
+        else{
+            console.log("it is not prime number"+i)
+        }
+    }
 `
 fs.writeFile("checkPrime.js",primenumber,(err)=>{
     if(err){
@@ -56,20 +60,16 @@ fs.writeFile("checkPrime.js",primenumber,(err)=>{
 })
 
 const checkduplicate=`
-const names=['venkat','paras','dinesh','sathish','paras']
-function findDuplicates(arr) {
-  if (!Array.isArray(arr)) return [];
-  const counts = new Map();
-  for (const item of arr) {
-    counts.set(item, (counts.get(item) || 0) + 1);
-  }
-  const duplicates = [];
-  for (const [item, cnt] of counts.entries()) {
-    if (cnt > 1) duplicates.push(item);
-  }
-  return duplicates;
-  console.log(findDuplicates(names))
-}`
+const arr=[1,2,3,4,4,6,4,8,9,3,4,2];
+find=[];
+for(let i=0;i<arr.length;i++){
+    for(let j=i+1;j<arr.length;j++){
+        if(arr[i]==arr[j] && !find.includes(arr[i])){
+            find.push(arr[i]);
+        }
+    }
+}
+console.log(find);`
 fs.writeFile("checkDuplicate.js",checkduplicate,(err)=>{
     if(err){
         console.log("error message : ",err)
