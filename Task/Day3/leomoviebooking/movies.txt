@@ -1,2 +1,1 @@
-Movie name : LEO 
- directer : lokesh , Actor : vijay 
+movie list : 1. leo 2. varisu 3. bison

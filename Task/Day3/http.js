@@ -1,43 +1,44 @@
-console.log('file created successfully')
 import fs from 'fs'
-import http from 'http'
+import http from 'http' 
 
-const server = http.createServer((req, res) => {});
-server.listen(5000,()=>{
-    console.log('Server is running on port 5000');
+const server = http.createServer((req,res)=>{});
+const port=3000;
+server.listen(port,()=>{
+    console.log('server is running on Port http://localhost:'+port);
 });
 
 if(!fs.existsSync('Day3/leomoviebooking')){
-    fs.mkdir('Day3/leomoviebooking',(err)=>{
-        if(err) console.log("thies is  erro for folder creating",err.message);
-        console.log('leomoviebooking folder  created');
-    })  
+    fs.mkdir('leomoviebooking',(err)=>{
+        if(err) console.log("error is :",err.message);
+          
+         console.log('folder created');
+    });
+   
 }
 
-if(!fs.existsSync('Day3/leomoviebooking/movies.txt')){
-    fs.writeFile('leomoviebooking/movies.txt','Movie name : LEO \n directer : lokesh , Actor : vijay ',(err)=>{
-        if(err) console.log(" movies text: ", err.message);
-        console.log('movies file created');
-    }) }
+if(!fs.existsSync('leomoviebooking/movies.txt')){
+    fs.writeFile('leomoviebooking/movies.txt',"movie list : 1. leo 2. varisu 3. bison",(err)=>{
+        if(err) console.log("error is :",err.message);
+        console.log('file created');
+    }   );
+}
 
-if(fs.existsSync('Day3/leomoviebooking/home.txt')){
-    fs.writeFile('leomoviebooking/home.txt','movies listed :- \n Leo \n varisu \n bison',(err)=>{
-        if(err) console.log(" home text: ", err.message);
-        console.log('home file created');
+if(!fs.existsSync('leomoviebooking/Home.txt')){
+    fs.writeFile('leomoviebooking/Home.txt',"welcome to leo movie booking app",(err)=>{
+        if(err) console.log("error is :",err.message);
+        console.log('file created');
+    }   );
+}
+
+if(!fs.existsSync('leomoviebooking/Booking.txt')){
+
+    fs.writeFile('leomoviebooking/Booking.txt',"your Leo movie booking is confirmed",(err)=>{
+        if(err) console.log("error is :",err.message);
+})
+}
+    
+if(!fs.existsSync('leomoviebooking/contact.txt')){
+    fs.writeFile('leomoviebooking/contact.txt',"contact us at : Kasi theater \n mobile : 9876543210",(err)=>{
+        if(err) console.log("error is :",err.message);  
     })
 }
-
-if(fs.existsSync('Day3/leomoviebooking/booking.txt')){
-    fs.writeFile('leomoviebooking/booking.txt','This is booking file\n leo movie availabel tickets : 2',(err)=>{
-        if(err) console.log(" booking text: ", err.message);
-        console.log('booking file created');
-    })  
-}
-
-if(fs.existsSync('Day3/leomoviebooking/contact.txt')){    
-    fs.writeFile('leomoviebooking/contact.txt','This is contact file\n contact number : 9876543210',(err)=>{
-        if(err) console.log(" contact text: ", err.message);
-        console.log('contact file created');
-    })  
-}
- 

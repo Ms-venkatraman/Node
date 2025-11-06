@@ -18,7 +18,13 @@ import fs from 'fs'
 // console.log('Path parse',path.format(parse));
 // console.log('path normalize',path.normalize(filepath));
 
-fs.writeFile('http.js',"console.log('file created successfully')",(err)=>{
-    if(err) throw err.message;
-    console.log('file created');
-})
+if(!fs.existsSync('http.js')){
+fs.writeFile('http.js',"console.log('hello world')",(err)=>{
+    if(err) console.log("error is :",err.message);
+    console.log('file created');        
+})}
+else{console.log('file already exists');}
+fs.rmdir('public',(err)=>{
+    if(err) console.log(err.message);
+    console.log('folder deleted');
+})  

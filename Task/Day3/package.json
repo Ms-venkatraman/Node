@@ -1,0 +1,18 @@
+{
+  "name": "Day3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon Day3/http.js",
+    "start": "node Day3/http.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
