@@ -10,7 +10,7 @@ router.get('/params/:id',params);
 
 router.get('/query',query);
 
-router.get('/headers',headers);
+router.post('/headers',headers);
 //http://localhost:3000/api/users/data
 //http://localhost:3000/api/users/params/
 //http://localhost:3000/api/users/query
