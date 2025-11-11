@@ -2,7 +2,6 @@ import express from 'express';
 import dontenv from 'dotenv';
 import cors from 'cors';
 import auth from './Router/auth.js';
-import router from './Router/auth.js';
 
 dontenv.config();
 const app=express();
