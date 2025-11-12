@@ -8,4 +8,5 @@ const connection= async ()=>{
         console.log("DB connection Error :",error)
     }
 }
+
 export default connection
