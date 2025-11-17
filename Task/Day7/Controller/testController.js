@@ -2,13 +2,13 @@ import test from "../models/testModel.js"
 
 export const teadata=async (req,res)=>{
 
-    console.log(req.body);
-    const {model,address,product,amount}=req.body
-    const testtest= await test.create({model,address,product,amount})
-    res.status(201).json({
-        message:"data added successfully",
-        data:testtest
-    })
+    console.log(req);
+    // const {model,address,product,amount}=req.body
+    // const testtest= await test.create({model,address,product,amount})
+    // res.status(201).json({
+    //     message:"data added successfully",
+    //     data:testtest
+    // })
 
 }
 
